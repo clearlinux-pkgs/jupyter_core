@@ -4,7 +4,7 @@
 #
 Name     : jupyter_core
 Version  : 4.3.0
-Release  : 2
+Release  : 3
 URL      : https://pypi.python.org/packages/2f/39/5138f975100ce14d150938df48a83cd852a3fd8e24b1244f4113848e69e2/jupyter_core-4.3.0.tar.gz
 Source0  : https://pypi.python.org/packages/2f/39/5138f975100ce14d150938df48a83cd852a3fd8e24b1244f4113848e69e2/jupyter_core-4.3.0.tar.gz
 Summary  : Jupyter core package. A base package on which Jupyter projects rely.
@@ -46,12 +46,12 @@ python components for the jupyter_core package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1487702067
+export SOURCE_DATE_EPOCH=1487702271
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1487702067
+export SOURCE_DATE_EPOCH=1487702271
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
