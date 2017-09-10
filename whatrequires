@@ -1,0 +1,7 @@
+# This file contains recursive sources that require this package
+bash_kernel-0:0.4.1-3.src
+ipykernel-0:4.6.1-6.src
+ipython-0:6.1.0-9.src
+ipython-sql-0:0.3.8-2.src
+jupyter-0:1.0.0-6.src
+jupyter-notebook-gist-0:0.4.0-4.src
