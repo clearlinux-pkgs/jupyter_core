@@ -4,13 +4,14 @@
 #
 Name     : jupyter_core
 Version  : 4.3.0
-Release  : 10
+Release  : 11
 URL      : http://pypi.debian.net/jupyter_core/jupyter_core-4.3.0.tar.gz
 Source0  : http://pypi.debian.net/jupyter_core/jupyter_core-4.3.0.tar.gz
 Summary  : Jupyter core package. A base package on which Jupyter projects rely.
 Group    : Development/Tools
 License  : BSD-3-Clause-Clear
 Requires: jupyter_core-bin
+Requires: jupyter_core-python3
 Requires: jupyter_core-python
 Requires: traitlets
 BuildRequires : pbr
@@ -38,9 +39,19 @@ bin components for the jupyter_core package.
 %package python
 Summary: python components for the jupyter_core package.
 Group: Default
+Requires: jupyter_core-python3
 
 %description python
 python components for the jupyter_core package.
+
+
+%package python3
+Summary: python3 components for the jupyter_core package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the jupyter_core package.
 
 
 %prep
@@ -51,7 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505409188
+export SOURCE_DATE_EPOCH=1507155723
 python3 setup.py build -b py3
 
 %install
@@ -70,5 +81,8 @@ echo ----[ mark ]----
 /usr/bin/jupyter-migrate
 
 %files python
+%defattr(-,root,root,-)
+
+%files python3
 %defattr(-,root,root,-)
 /usr/lib/python3*/*
