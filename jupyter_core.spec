@@ -4,7 +4,7 @@
 #
 Name     : jupyter_core
 Version  : 4.4.0
-Release  : 16
+Release  : 17
 URL      : http://pypi.debian.net/jupyter_core/jupyter_core-4.4.0.tar.gz
 Source0  : http://pypi.debian.net/jupyter_core/jupyter_core-4.4.0.tar.gz
 Summary  : Jupyter core package. A base package on which Jupyter projects rely.
