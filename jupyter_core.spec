@@ -16,7 +16,7 @@ Requires: jupyter_core-python
 Requires: traitlets
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : python-dev
+
 BuildRequires : python3-dev
 BuildRequires : setuptools
 BuildRequires : traitlets
