@@ -2,7 +2,7 @@
 bash_kernel
 ipykernel
 ipython
-ipython-sql
-jupyter
-jupyter-notebook-gist
+jupyter_client
+nbconvert
 notebook
+qtconsole
