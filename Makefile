@@ -1,5 +1,5 @@
 PKG_NAME := jupyter_core
-URL = https://files.pythonhosted.org/packages/a4/47/e852cd00ae811939201b7f8118a856f2c6a52db3b31c4185ffbc098405c7/jupyter_core-4.6.0.tar.gz
+URL = https://files.pythonhosted.org/packages/f4/86/b1d5b38cfb9b0c747bda6e1ee330b800b895de755b14304b5cb12d925cd7/jupyter_core-4.6.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
