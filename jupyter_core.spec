@@ -4,7 +4,7 @@
 #
 Name     : jupyter_core
 Version  : 4.6.3
-Release  : 33
+Release  : 34
 URL      : https://files.pythonhosted.org/packages/28/64/8bdde111be57a2a3d54376db29b5f25ab9c68ffd3d6554989db24d5c1b7a/jupyter_core-4.6.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/28/64/8bdde111be57a2a3d54376db29b5f25ab9c68ffd3d6554989db24d5c1b7a/jupyter_core-4.6.3.tar.gz
 Summary  : Jupyter core package. A base package on which Jupyter projects rely.
@@ -20,7 +20,10 @@ BuildRequires : traitlets
 BuildRequires : traitlets-python
 
 %description
-There is no reason to install this package on its own.
+# Jupyter Core
+Core common functionality of Jupyter projects.
+This package contains base application classes and configuration inherited by other projects.
+It doesn't do much on its own.
 
 %package bin
 Summary: bin components for the jupyter_core package.
@@ -52,7 +55,8 @@ python components for the jupyter_core package.
 Summary: python3 components for the jupyter_core package.
 Group: Default
 Requires: python3-core
-Provides: pypi(jupyter-core)
+Provides: pypi(jupyter_core)
+Requires: pypi(traitlets)
 
 %description python3
 python3 components for the jupyter_core package.
@@ -67,8 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583162948
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1583536620
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
