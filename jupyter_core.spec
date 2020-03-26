@@ -4,7 +4,7 @@
 #
 Name     : jupyter_core
 Version  : 4.6.3
-Release  : 34
+Release  : 35
 URL      : https://files.pythonhosted.org/packages/28/64/8bdde111be57a2a3d54376db29b5f25ab9c68ffd3d6554989db24d5c1b7a/jupyter_core-4.6.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/28/64/8bdde111be57a2a3d54376db29b5f25ab9c68ffd3d6554989db24d5c1b7a/jupyter_core-4.6.3.tar.gz
 Summary  : Jupyter core package. A base package on which Jupyter projects rely.
@@ -16,6 +16,9 @@ Requires: jupyter_core-python = %{version}-%{release}
 Requires: jupyter_core-python3 = %{version}-%{release}
 Requires: traitlets
 BuildRequires : buildreq-distutils3
+BuildRequires : jupyter_core
+BuildRequires : nose
+BuildRequires : pytest
 BuildRequires : traitlets
 BuildRequires : traitlets-python
 
@@ -71,7 +74,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583536620
+export SOURCE_DATE_EPOCH=1585235196
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -80,6 +84,11 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
+%check
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
+py.test
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
