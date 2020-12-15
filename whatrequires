@@ -3,6 +3,7 @@ bash_kernel
 ipykernel
 ipython
 jupyter_client
+jupyter_core
 nbconvert
 notebook
 qtconsole
